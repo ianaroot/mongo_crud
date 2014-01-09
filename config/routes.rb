@@ -1,6 +1,7 @@
 MongoidCrud::Application.routes.draw do
 
-  root to: "sessions#new"
+  root to: "users#new"
+  resources :users, except: [:index]
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
