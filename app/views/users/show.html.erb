@@ -1,6 +1,3 @@
-will display a user's posts here later
-<br>
-<br>
 <% if authorize(@user) %>
   <%= form_for @post do |f| %>
 
@@ -10,7 +7,19 @@ will display a user's posts here later
     <%= f.label :content %><br>
     <%= f.text_area :content %><br>
 
+    <%= f.hidden_field :user_id, value: @user.id %>
+
     <%= f.submit %>
 
+  <% end %>
+<% end %>
+
+<% @posts.each do |post| %>
+  <h4>
+    <%= post.title %>
+  </h4>
+  <%= post.content %>
+  <% if authorize(@user) %> 
+    <!-- delete and edit links -->
   <% end %>
 <% end %>
