@@ -19,7 +19,9 @@
     <%= post.title %>
   </h4>
   <%= post.content %>
-  <% if authorize(@user) %> 
-    <!-- delete and edit links -->
+  <% if authorize(@user) %>
+    <%= form_for(post, html: {method: :delete}) do |f| %>
+      <%= f.submit value: "delete"%>
+    <% end %>
   <% end %>
 <% end %>
