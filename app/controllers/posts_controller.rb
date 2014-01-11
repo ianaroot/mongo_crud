@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     else
       flash[:errors] = "post not created" #how do mongo errors save on object?
     end
-    redirect_to user_path(cookies[:user_id]) #this line will change once users and posts are associated
+    redirect_to user_path(post.user)
   end
 
 end
