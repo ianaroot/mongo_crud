@@ -7,6 +7,8 @@ class User
 
   field :password_digest, type: String
   has_secure_password
-  
+
   validates_uniqueness_of :email
+
+  has_many :posts
 end

@@ -15,8 +15,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @post = Post.new
     @user = User.find(params[:id])
+    @post = @user.posts.build
   end
 
 end

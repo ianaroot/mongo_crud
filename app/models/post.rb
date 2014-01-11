@@ -4,4 +4,6 @@ class Post
   field :content, type: String
   #how to associate post to user in mongo
 
+  belongs_to :user
+
 end
