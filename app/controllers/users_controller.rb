@@ -17,7 +17,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts
-    @post = @user.posts.build
+    @post = Post.new(user_id: params[:id])
+    p @posts
   end
 
 end
