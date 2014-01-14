@@ -21,6 +21,6 @@
      <%= form_for(post, html: {method: :delete}) do |f| %>
        <%= f.submit value: "delete"%><br>
      <% end %>
-
+     <%= link_to "edit", [:edit, post] %>
    <% end %>
 <% end %>
