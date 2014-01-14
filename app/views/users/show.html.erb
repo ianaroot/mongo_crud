@@ -20,6 +20,8 @@
     <br><h3><%= post.title %></h3>
     <%= post.content %><br>
   </div>
-   <%= link_to_if(authorize(@user), "delete", post_path(post), method: :delete) %>
-   <%= link_to_if(authorize(@user), "edit", [:edit, post]) %>
+  <% if authorize(@user) %>
+     <%= link_to "delete", post_path(post), method: :delete %>
+     <%= link_to "edit", [:edit, post] %>
+   <% end %>
 <% end %>
