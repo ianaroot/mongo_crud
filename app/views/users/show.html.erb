@@ -1,3 +1,4 @@
+<h2><%= @user.email %></h2>
 <% if authorize(@user) %>
   <%= form_for @post do |f| %>
 
@@ -15,12 +16,10 @@
 <% end %>
 
 <% @posts.each do |post| %>
-  <br><h3><%= post.title %></h3>
-  <%= post.content %><br>
-  <% if authorize(@user) %>
-     <%= form_for(post, html: {method: :delete}) do |f| %>
-       <%= f.submit value: "delete"%><br>
-     <% end %>
-     <%= link_to "edit", [:edit, post] %>
-   <% end %>
+  <div class="post">
+    <br><h3><%= post.title %></h3>
+    <%= post.content %><br>
+  </div>
+   <%= link_to_if(authorize(@user), "delete", post_path(post), method: :delete) %>
+   <%= link_to_if(authorize(@user), "edit", [:edit, post]) %>
 <% end %>
