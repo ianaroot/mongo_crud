@@ -1,7 +1,7 @@
 MongoidCrud::Application.routes.draw do
 
   root to: "users#new"
-  resources :users, except: [:index]
+  resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :posts, only: [:create, :update, :destroy, :edit]
   
