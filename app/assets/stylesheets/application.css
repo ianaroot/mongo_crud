@@ -11,3 +11,12 @@
  *= require_self
  *= require_tree .
  */
+.post {
+  border: 1px solid black;
+  width: 300px;
+  margin-top: 25px; 
+}
+
+h3 {
+  margin-top: 0px;
+}
