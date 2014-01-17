@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       sign_in(user)
       redirect_to user_path(user)
     else
-      redirect_to new_session_path
+      redirect_to root_path
     end
   end
 
